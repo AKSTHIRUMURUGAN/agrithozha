@@ -54,7 +54,7 @@ export default function DiseaseDetection() {
 
       const apiKey = "AIzaSyD3nQ4W9-N4jYuyrUdtChlbQ8AHdudZYwo"// Replace with your actual API key
       console.log(apiKey)
-      const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`
+      const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`
 
       const prompt = `Analyze this plant image and identify any diseases. Provide a JSON response with:
 {

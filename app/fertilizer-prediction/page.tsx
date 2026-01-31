@@ -9,6 +9,16 @@ import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Leaf, TrendingUp, AlertCircle } from "lucide-react"
 
+interface PredictionResult {
+  primaryFertilizer: string;
+  quantity: string;
+  applicationTiming: string;
+  organicAlternatives: string[];
+  micronutrients: string[];
+  costEstimate: string;
+  expectedYieldIncrease: string;
+}
+
 export default function FertilizerPrediction() {
   const [formData, setFormData] = useState({
     cropType: "",
@@ -22,10 +32,10 @@ export default function FertilizerPrediction() {
     rainfall: "",
     location: "",
   })
-  const [prediction, setPrediction] = useState(null)
+  const [prediction, setPrediction] = useState<PredictionResult | null>(null)
   const [loading, setLoading] = useState(false)
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setLoading(true)
 
@@ -247,7 +257,7 @@ export default function FertilizerPrediction() {
                     <div>
                       <h3 className="font-semibold mb-2">Organic Alternatives</h3>
                       <ul className="space-y-1">
-                        {prediction.organicAlternatives.map((alt, index) => (
+                        {prediction.organicAlternatives.map((alt: string, index: number) => (
                           <li key={index} className="text-gray-700 flex items-center gap-2">
                             <div className="w-1.5 h-1.5 bg-green-500 rounded-full"></div>
                             {alt}
@@ -259,7 +269,7 @@ export default function FertilizerPrediction() {
                     <div>
                       <h3 className="font-semibold mb-2">Micronutrients</h3>
                       <ul className="space-y-1">
-                        {prediction.micronutrients.map((nutrient, index) => (
+                        {prediction.micronutrients.map((nutrient: string, index: number) => (
                           <li key={index} className="text-gray-700 flex items-center gap-2">
                             <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div>
                             {nutrient}

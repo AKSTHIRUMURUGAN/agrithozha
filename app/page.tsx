@@ -54,7 +54,7 @@ export default function AgriThozhaHome() {
 
             <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
               AgriThozha connects farmers with investors through our zero-risk farming model. Eliminate debt, guarantee
-              income, and create sustainable livelihoods for India's farmers.
+              income, and create sustainable livelihoods for India&apos;s farmers.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
@@ -87,7 +87,7 @@ export default function AgriThozhaHome() {
       <section id="problem" className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">The crisis we're solving</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">The crisis we&apos;re solving</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Behind every statistic is a human story. These numbers represent families we can save.
             </p>
@@ -202,7 +202,7 @@ export default function AgriThozhaHome() {
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Measurable impact</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Real change in farmers' lives and agricultural productivity across India.
+              Real change in farmers&apos; lives and agricultural productivity across India.
             </p>
           </div>
 
@@ -243,7 +243,7 @@ export default function AgriThozhaHome() {
                 </div>
               </div>
               <p className="text-center mt-4 opacity-90">
-                10 investors × ₹3,000 each = Transformed farmer's life + Profitable returns
+                10 investors × ₹3,000 each = Transformed farmer&apos;s life + Profitable returns
               </p>
             </CardContent>
           </Card>
@@ -312,8 +312,8 @@ export default function AgriThozhaHome() {
                   ))}
                 </div>
                 <blockquote className="text-lg mb-4 italic text-gray-700">
-                  "AgriThozha saved my farm and family. Zero investment, guaranteed income. My children can now go to
-                  school."
+                  &ldquo;AgriThozha saved my farm and family. Zero investment, guaranteed income. My children can now go to
+                  school.&rdquo;
                 </blockquote>
                 <div>
                   <div className="font-semibold text-gray-900">Rajesh Kumar</div>
@@ -325,8 +325,8 @@ export default function AgriThozhaHome() {
             <Card className="p-6 bg-blue-50 border-0 shadow-sm">
               <CardContent className="pt-6">
                 <Quote className="w-8 h-8 text-blue-600 mb-4" />
-                <blockquote className="text-lg mb-4 italic text-blue-800">"உழுதுண்டு வாழ்வாரே வாழ்வார்"</blockquote>
-                <p className="text-sm text-blue-700">"Those who live by farming live truly" - Thirukkural 1033</p>
+                <blockquote className="text-lg mb-4 italic text-blue-800">&ldquo;உழுதுண்டு வாழ்வாரே வாழ்வார்&rdquo;</blockquote>
+                <p className="text-sm text-blue-700">&ldquo;Those who live by farming live truly&rdquo; - Thirukkural 1033</p>
               </CardContent>
             </Card>
 
@@ -338,7 +338,7 @@ export default function AgriThozhaHome() {
                   ))}
                 </div>
                 <blockquote className="text-lg mb-4 italic text-gray-700">
-                  "15% returns while helping farmers. Perfect impact investment. I can see exactly where my money goes."
+                  &ldquo;15% returns while helping farmers. Perfect impact investment. I can see exactly where my money goes.&rdquo;
                 </blockquote>
                 <div>
                   <div className="font-semibold text-gray-900">Priya Sharma</div>
@@ -363,7 +363,7 @@ export default function AgriThozhaHome() {
               className="px-8 py-3 bg-white text-green-600 hover:bg-gray-100 rounded-full"
             >
               <Users className="w-5 h-5 mr-2" />
-              I'm a Farmer
+              I&apos;m a Farmer
             </Button>
             <Button
               size="lg"

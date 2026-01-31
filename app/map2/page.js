@@ -515,7 +515,7 @@ export default function AgroMonitoringDashboard() {
                    <div className="text-xs text-gray-700 space-y-1">
                      <div>• Click or tap on the map to add points</div>
                      <div>• Need at least 3 points to create polygon</div>
-                     <div>• Click "Finish Drawing" when done</div>
+                     <div>• Click &ldquo;Finish Drawing&rdquo; when done</div>
                      <div className="text-blue-600 font-medium">Points: {drawingPoints.current.length}</div>
                    </div>
                  </div>

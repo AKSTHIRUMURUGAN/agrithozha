@@ -140,7 +140,7 @@ function formatResponse(content: string): string {
 
 function extractSources(content: string): string[] {
   // Extract government website mentions from the response
-  const sources = []
+  const sources: string[] = []
   const websites = [
     "pmkisan.gov.in",
     "agmarknet.gov.in",

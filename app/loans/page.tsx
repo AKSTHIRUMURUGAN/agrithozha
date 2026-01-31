@@ -9,11 +9,17 @@ import { Label } from "@/components/ui/label"
 import { Badge } from "@/components/ui/badge"
 import { CreditCard, Calculator, CheckCircle, AlertCircle } from "lucide-react"
 
+interface EMIResult {
+  monthly: number;
+  total: number;
+  interest: number;
+}
+
 export default function LoansPage() {
   const [loanAmount, setLoanAmount] = useState("")
   const [loanTenure, setLoanTenure] = useState("")
   const [interestRate, setInterestRate] = useState("7")
-  const [emi, setEmi] = useState(null)
+  const [emi, setEmi] = useState<EMIResult | null>(null)
 
   const calculateEMI = () => {
     const principal = Number.parseFloat(loanAmount)
