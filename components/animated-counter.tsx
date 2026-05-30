@@ -1,33 +1,38 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
+import { useInView } from "framer-motion"
 
 interface AnimatedCounterProps {
-  end: number
+  from: number
+  to: number
   duration?: number
-  suffix?: string
-  prefix?: string
-  className?: string
+  formatter?: (value: number) => string
 }
 
-export function AnimatedCounter({
-  end,
-  duration = 2000,
-  suffix = "",
-  prefix = "",
-  className = "",
+export function AnimatedCounter({ 
+  from, 
+  to, 
+  duration = 2,
+  formatter = (v) => Math.round(v).toLocaleString()
 }: AnimatedCounterProps) {
-  const [count, setCount] = useState(0)
+  const ref = useRef<HTMLSpanElement>(null)
+  const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const [count, setCount] = useState(from)
 
   useEffect(() => {
+    if (!isInView) return
+
     let startTime: number
     let animationFrame: number
 
-    const animate = (currentTime: number) => {
-      if (!startTime) startTime = currentTime
-      const progress = Math.min((currentTime - startTime) / duration, 1)
-
-      setCount(Math.floor(progress * end))
+    const animate = (timestamp: number) => {
+      if (!startTime) startTime = timestamp
+      const progress = Math.min((timestamp - startTime) / (duration * 1000), 1)
+      
+      // Ease out cubic
+      const eased = 1 - Math.pow(1 - progress, 3)
+      setCount(from + (to - from) * eased)
 
       if (progress < 1) {
         animationFrame = requestAnimationFrame(animate)
@@ -35,15 +40,8 @@ export function AnimatedCounter({
     }
 
     animationFrame = requestAnimationFrame(animate)
-
     return () => cancelAnimationFrame(animationFrame)
-  }, [end, duration])
+  }, [isInView, from, to, duration])
 
-  return (
-    <span className={className}>
-      {prefix}
-      {count.toLocaleString()}
-      {suffix}
-    </span>
-  )
+  return <span ref={ref}>{formatter(count)}</span>
 }

@@ -26,18 +26,6 @@ export default function RootLayout({
           {children}
           <elevenlabs-convai 
           agent-id="agent_3001k5ndk62yehz9kf4r5a2xdgsp" 
-          style={{
-            position: 'fixed',
-            bottom: '10px',
-            left: '40px',
-            width: '100vw',
-            height: '100vh',
-            borderRadius: '12px',
-            boxShadow: '0 4px 20px rgba(0,0,0,0.15)',
-            overflow: 'hidden',
-            zIndex: 50,
-            transform: 'translateY(0)'
-          }} 
         />
         <Script
           src="https://unpkg.com/@elevenlabs/convai-widget-embed"
